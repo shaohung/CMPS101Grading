@@ -46,7 +46,8 @@ class Student:
 			#run all tests
 			for test in self.tests:
 				test.runTest()
-				print(test.score)
-				print(test.report)
+				print("name" + test.name)
+				print("score" + str(test.score))
+				print("report"+test.report)
 			pass
-		self.remove()
+		#self.remove()

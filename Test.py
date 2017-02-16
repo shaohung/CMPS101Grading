@@ -1,4 +1,4 @@
-import os, subprocess
+import os, subprocess, shlex
 class Test :
 	def __init__ (self, testname, path):
 		self.path = path
@@ -20,10 +20,20 @@ class Test :
 				return
 			#Perform diff comparison of expected output and actual output
 		try:
+			#raise ValueError('A very specific bad thing happened')
 			subprocess.check_call(("diff -w -b %s.out %s.expected") % (self.name, self.name), shell=True, cwd = self.path)
 		except :
-			self.report +=("Test failed due to comparison failure.") + "\n"
-		
+			try:
+				#diff <( tr -d ' \n' <Test_Append.out ) <( tr -d ' \n' <Test_Append.expected)
+				#print((str(shlex.quote(("diff <( tr -d ' \\n' <%s.out ) <( tr -d ' \\n' <%s.expected)")% (self.name, self.name)))))
+				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.out > %s1.out")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
+				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.expected > %s1.expected")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
+				subprocess.check_call((("diff %s1.out %s1.expected")% (self.name, self.name)), shell=True, cwd = self.path)
+				self.report +=("Test failed due to comparison failure on spaces and newlines.") + "\n"
+			except:
+				self.report +=("Test failed due to comparison failure.") + "\n"
+				return
+
 		#valgrind --leak-check=full ./Test_Constructor >> Test_Constructor.out
 		with open(os.path.join(self.path, "memoryLeak")) as f:
 			content = f.readlines()
