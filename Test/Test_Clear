@@ -1,5 +1,5 @@
 5
-Check list pclear
+Check list clear
 gcc -std=c99 -Wall -c Test_Clear.c > w 2>&1
 gcc -std=c99 -Wall -o Test_Clear Test_Clear.o ../List.o &> r
 ./Test_Clear

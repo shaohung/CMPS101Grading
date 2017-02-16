@@ -12,6 +12,7 @@ class Test :
 		del self.commands[0]
 
 	def runTest(self):
+		FNULL = open(os.devnull, 'w')
 		for command in self.commands:
 			try :
 				testResults = subprocess.check_output(command, shell=True, cwd=self.path)
@@ -21,14 +22,14 @@ class Test :
 			#Perform diff comparison of expected output and actual output
 		try:
 			#raise ValueError('A very specific bad thing happened')
-			subprocess.check_call(("diff -w -b %s.out %s.expected") % (self.name, self.name), shell=True, cwd = self.path)
+			subprocess.check_call(("diff -w -b %s.out %s.expected") % (self.name, self.name), shell=True, cwd = self.path, stdout=FNULL)
 		except :
 			try:
 				#diff <( tr -d ' \n' <Test_Append.out ) <( tr -d ' \n' <Test_Append.expected)
 				#print((str(shlex.quote(("diff <( tr -d ' \\n' <%s.out ) <( tr -d ' \\n' <%s.expected)")% (self.name, self.name)))))
 				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.out > %s1.out")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
 				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.expected > %s1.expected")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
-				subprocess.check_call((("diff %s1.out %s1.expected")% (self.name, self.name)), shell=True, cwd = self.path)
+				subprocess.check_call((("diff %s1.out %s1.expected")% (self.name, self.name)), shell=True, cwd = self.path, stdout=FNULL)
 				self.report +=("Test failed due to comparison failure on spaces and newlines.") + "\n"
 			except:
 				self.report +=("Test failed due to comparison failure.") + "\n"

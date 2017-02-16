@@ -25,7 +25,7 @@ int main(){
 
 	List c = newList();
 	append(c, 5);
-	printList(out, a);
+	printList(out, c);
 
 	fclose(out);
 	freeList(&b);

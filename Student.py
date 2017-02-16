@@ -50,4 +50,4 @@ class Student:
 				print("score" + str(test.score))
 				print("report"+test.report)
 			pass
-		#self.remove()
+		self.remove()

@@ -1,0 +1,6 @@
+5
+Check list access functions
+gcc -std=c99 -Wall -c Test_Access.c > w 2>&1
+gcc -std=c99 -Wall -o Test_Access Test_Access.o ../List.o &> r
+./Test_Access
+valgrind --leak-check=full --log-file="memoryLeak" ./Test_Access
