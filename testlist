@@ -4,3 +4,4 @@ Test_Prepend
 Test_Clear
 Test_Access
 Test_Move
+Test_Insert
