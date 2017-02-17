@@ -9,3 +9,5 @@ Test_Insert_Index
 Test_Delete
 Test_Equals_Copy
 ListClient
+Test_Lex_One
+Test_Lex_Two
