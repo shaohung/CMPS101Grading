@@ -30,7 +30,7 @@ class Test :
 				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.out > %s1.out")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
 				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.expected > %s1.expected")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
 				subprocess.check_call((("diff %s1.out %s1.expected")% (self.name, self.name)), shell=True, cwd = self.path, stdout=FNULL)
-				self.report +=("Test failed due to comparison failure on spaces and newlines.") + "\n"
+				#self.report +=("Test failed due to comparison failure on spaces and newlines.") + "\n"
 			except:
 				self.report +=("Test failed due to comparison failure.") + "\n"
 				return
