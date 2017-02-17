@@ -11,3 +11,4 @@ Test_Equals_Copy
 ListClient
 Test_Lex_One
 Test_Lex_Two
+Test_Lex_Three

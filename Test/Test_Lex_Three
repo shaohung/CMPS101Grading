@@ -1,0 +1,4 @@
+5
+Check lex
+./../Lex in3 Test_Lex_Three.out
+valgrind --leak-check=full --log-file="memoryLeak" ./../Lex in3 Test_Lex_Threetmp.out
