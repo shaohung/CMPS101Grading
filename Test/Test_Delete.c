@@ -44,6 +44,7 @@ int main(){
 	printList(out, b);//16 9 4 1 0
 	moveFront(a); moveNext(a); moveNext(a);
 	delete(a);
+	fprintf(out, "%d\n", index(a));//-1
 	printList(out, a);//0 1 9 16 
 	moveFront(b);
 	delete(b);
