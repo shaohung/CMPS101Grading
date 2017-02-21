@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Append.c
-5
+4
 Check list append
 gcc -std=c99 -Wall -c Test_Append.c > w 2>&1
 gcc -std=c99 -Wall -o Test_Append Test_Append.o ../List.o &> r

@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Lex_Two.expected
-5
+15
 Check lex
 ./../Lex in2 Test_Lex_Two.out
 valgrind --leak-check=full --log-file="memoryLeak" ./../Lex in2 Test_Lex_Twotmp.out

@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Constructor.c
-5
+4
 Check if list is constructed and destructed properly
 gcc -std=c99 -Wall -c Test_Constructor.c > w 2>&1
 gcc -std=c99 -Wall -o Test_Constructor Test_Constructor.o ../List.o &> r
