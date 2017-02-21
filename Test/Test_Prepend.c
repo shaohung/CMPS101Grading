@@ -11,14 +11,14 @@ int main(){
 	}
 	List a = newList();
 	append(a, 3);
-	printList(out, a);
+	printList(out, a);//3
 	prepend(a, 4);
-	printList(out, a);
+	printList(out, a);//4 3
 	List b = newList();
 	prepend(b, 6);
-	printList(out, b);
+	printList(out, b);//6
 	prepend(b, 12);
-	printList(out, b);
+	printList(out, b);// 12 6
 	fclose(out);
 	freeList(&b);
 	freeList(&a);

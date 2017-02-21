@@ -11,21 +11,21 @@ int main(){
 	}
 	List a = newList();
 	append(a, 3);
-	printList(out, a);
+	printList(out, a);//3
 	clear(a);
-	printList(out, a);
+	printList(out, a);//
 
 	List b = newList();
 	prepend(b, 6);
-	printList(out, b);
+	printList(out, b);//6
 	prepend(b, 12);
-	printList(out, b);
+	printList(out, b);//12 6
 	clear(b);
-	printList(out, b);
+	printList(out, b);//
 
 	List c = newList();
 	append(c, 5);
-	printList(out, c);
+	printList(out, c);//5
 
 	fclose(out);
 	freeList(&b);

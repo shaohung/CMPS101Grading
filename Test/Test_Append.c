@@ -11,9 +11,9 @@ int main(){
 	}
 	List a = newList();
 	append(a, 3);
-	printList(out, a);
+	printList(out, a);//3
 	append(a, 4);
-	printList(out, a);
+	printList(out, a);//3 4
 	fclose(out);
 	freeList(&a);
 	return 0;

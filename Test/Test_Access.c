@@ -11,15 +11,15 @@ int main(){
 	}
 	List a = newList();
 	append(a, 3);
-	printList(out, a); fprintf(out, "\n");
+	printList(out, a); fprintf(out, "\n"); //3
 	prepend(a, 4);
-	printList(out, a); fprintf(out ,"\n");
+	printList(out, a); fprintf(out ,"\n");//4 3
 	fprintf("%d\n", length(a));
 	append(a, 5);
-	printList(out, a); 	fprintf(out, "\n");
-	fprintf("%d\n", length(a));
-	fprintf("%d\n", front(a));
-	fprintf("%d\n", back(a));
+	printList(out, a); 	fprintf(out, "\n");//4 3 5
+	fprintf("%d\n", length(a)); //3
+	fprintf("%d\n", front(a)); // 4
+	fprintf("%d\n", back(a));//5
 
 	fclose(out);
 	freeList(&a);
