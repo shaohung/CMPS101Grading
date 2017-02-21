@@ -2,6 +2,6 @@ https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Insert
 7
 Check list insert
 gcc -std=c99 -Wall -c Test_Insert.c > w 2>&1
-gcc -std=c99 -Wall -o Test_Insert Test_Insert.o ../List.o &> r
+gcc -std=c99 -Wall -o Test_Insert Test_Insert.o ../List.o -pthread -lrt &> r
 ./Test_Insert
 valgrind --leak-check=full --log-file="memoryLeak" ./Test_Insert

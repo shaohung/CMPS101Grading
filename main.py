@@ -11,18 +11,21 @@ def getStudents(path):
 def main():
 	students = getStudents(sys.argv[1:][0])
 
-	for student in students:
-		print(student.name)
-		student.grade()
-		studentfolder = os.path.join(sys.argv[1:][0], student.name)
-		studentreport = os.path.join(studentfolder, 'report.txt')
-		with open(studentreport, 'w') as f:
-			f.write(student.report)
-
-	with open('gradereport', 'w') as f:
-		f.write('Student ID, pa2 [100]\n')
+	with open('gradereport', 'a') as f1:
+		f1.write('Student ID, pa2 [100]\n')
 		for student in students:
-			f.write(student.name+","+str(student.score)+"\n")
+			print(student.name)
+			student.grade()
+			studentfolder = os.path.join(sys.argv[1:][0], student.name)
+			studentreport = os.path.join(studentfolder, 'report.txt')
+			with open(studentreport, 'w') as f:
+				f.write(student.report)
+			f1.write(student.name+","+str(student.score)+"\n")
+
+	#with open('gradereport', 'w') as f:
+		#f.write('Student ID, pa2 [100]\n')
+		#for student in students:
+			#f.write(student.name+","+str(student.score)+"\n")
 	a = [0.0]*(len(students[0].tests))
 	for j in range(0, len(a)):
 		for i in range(0, len(students)):

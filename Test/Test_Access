@@ -2,6 +2,6 @@ https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Access
 4
 Check list access functions
 gcc -std=c99 -Wall -c Test_Access.c > w 2>&1
-gcc -std=c99 -Wall -o Test_Access Test_Access.o ../List.o &> r
+gcc -std=c99 -Wall -o Test_Access Test_Access.o ../List.o -pthread -lrt &> r
 ./Test_Access
 valgrind --leak-check=full --log-file="memoryLeak" ./Test_Access

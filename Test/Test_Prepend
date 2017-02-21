@@ -2,6 +2,6 @@ https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Prepen
 4
 Check list prepend
 gcc -std=c99 -Wall -c Test_Prepend.c > w 2>&1
-gcc -std=c99 -Wall -o Test_Prepend Test_Prepend.o ../List.o &> r
+gcc -std=c99 -Wall -o Test_Prepend Test_Prepend.o ../List.o -pthread -lrt &> r
 ./Test_Prepend
 valgrind --leak-check=full --log-file="memoryLeak" ./Test_Prepend

@@ -82,6 +82,15 @@ class Student:
 				my_file = Path((p + "/" + "%s.out")%(test.name))
 				if my_file.is_file():
 					with open((p + "/" + "%s.out")%(test.name), 'r') as content_file:
-						self.report+= content_file.read()
+						s = 0
+						while True:
+							c= content_file.read(1)
+							s+=1
+							if not c:
+								break
+							if s > 1000:
+								break
+							self.report+=c
+
 	 			self.report += ("\n-------------\n")
 

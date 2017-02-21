@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Lex_One.expected
 15
 Check lex
-./../Lex in1 Test_Lex_One.out
+timeout 2 ./../Lex in1 Test_Lex_One.out
 valgrind --leak-check=full --log-file="memoryLeak" ./../Lex in1 Test_Lex_Onetmp.out

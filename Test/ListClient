@@ -2,6 +2,6 @@ https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/ListClient.
 15
 Check listclient
 gcc -std=c99 -Wall -c ListClient.c > w 2>&1
-gcc -std=c99 -Wall -o ListClient ListClient.o ../List.o &> r
+gcc -std=c99 -Wall -o ListClient ListClient.o ../List.o -pthread -lrt &> r
 ./ListClient
 valgrind --leak-check=full --log-file="memoryLeak" ./ListClient
