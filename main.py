@@ -10,6 +10,12 @@ def getStudents(path):
 
 def main():
 	students = getStudents(sys.argv[1:][0])
+
+	with open('gradereport2', 'w') as f:
+		f.write('Student ID, pa2 [100]\n')
+		for student in students:
+			f.write(student.name+","+str(student.score)+"\n")
+
 	for student in students:
 		print(student.name)
 		student.grade()
@@ -17,6 +23,11 @@ def main():
 		studentreport = os.path.join(studentfolder, 'report.txt')
 		with open(studentreport, 'w') as f:
 			f.write(student.report)
+
+	with open('gradereport', 'w') as f:
+		f.write('Student ID, pa2 [100]\n')
+		for student in students:
+			f.write(student.name+","+str(student.score)+"\n")
 	#a = [0]*(len(students[0].tests))
 	#for j in range(0, len(a)):
 	#	for i in range(0, len(students)):

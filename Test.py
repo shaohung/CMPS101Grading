@@ -14,7 +14,7 @@ class Test :
 		del self.commands[0]
 		del self.commands[0]
 
-	@timeout(4)
+	@timeout(25)
 	def runTest(self):
 		FNULL = open(os.devnull, 'w')
 		for command in self.commands:
