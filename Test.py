@@ -4,11 +4,13 @@ class Test :
 	def __init__ (self, testname, path):
 		self.path = path
 		self.commands = [command.rstrip() for command in open(os.path.join(path, testname))]
-		self.points = self.commands[0]
-		self.description = self.commands[1]
+		self.url = self.commands[0]
+		self.points = int(self.commands[1])
+		self.description = self.commands[2]
 		self.name = testname
 		self.report = ""
 		self.score = 0
+		del self.commands[0]
 		del self.commands[0]
 		del self.commands[0]
 
@@ -43,6 +45,7 @@ class Test :
 			content = f.readlines()
 			for line in content:
 				if 'no leaks are possible' in line:
+					self.report += "ok\n"
 					self.score = self.points
 					return
 		self.report +=("Test failed due to memory leak.") + "\n"
