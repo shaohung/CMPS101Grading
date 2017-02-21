@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Equals_Copy.c
-6
+7
 Check list equals and copy
 gcc -std=c99 -Wall -c Test_Equals_Copy.c 2>&1
 gcc -std=c99 -Wall -o Test_Equals_Copy Test_Equals_Copy.o ../List.o &> r
