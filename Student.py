@@ -1,5 +1,6 @@
 import shutil, errno, subprocess, os
 from Test import Test
+from timeout import TimeoutError
 
 class Student:
 	def __init__ (self, name, path):
@@ -45,9 +46,13 @@ class Student:
 		if(compiled):
 			#run all tests
 			for test in self.tests:
-				test.runTest()
-				print("name" + test.name)
-				print("score" + str(test.score))
-				print("report"+test.report)
+				try:
+					test.runTest()
+				except TimeoutError as error:
+					test.report+="timeout\n"
+
+				#print("name: "+str(test.name))
+				#print("score: " +str(test.score))
+				#print("report: " + test.report)
 			pass
 		self.remove()

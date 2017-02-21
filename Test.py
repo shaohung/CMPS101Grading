@@ -1,4 +1,5 @@
 import os, subprocess, shlex
+from timeout import timeout
 class Test :
 	def __init__ (self, testname, path):
 		self.path = path
@@ -11,6 +12,7 @@ class Test :
 		del self.commands[0]
 		del self.commands[0]
 
+	@timeout(4)
 	def runTest(self):
 		FNULL = open(os.devnull, 'w')
 		for command in self.commands:
