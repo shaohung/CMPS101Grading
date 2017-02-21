@@ -34,7 +34,7 @@ int main(){
 	}
 	printList(out, b);// 4 3 2 1 0
 	moveFront(b);
-	while(index(a)>-1){
+	while(index(b)>-1){
 		fprintf(out, "%d ", get(b));//4 3 2 1 0
 		moveNext(b);
 	}

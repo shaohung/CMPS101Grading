@@ -28,7 +28,7 @@ def main():
 		for i in range(0, len(students)):
 			a[j]+=(students[i].tests[j].score)
 		a[j]/=len(students)
-		print(a[j])
+		print(students[0].tests[j].name+ ":" + str(a[j])+"/"+str(students[0].tests[j].points))
 	#[x for x in os.listdir('mossabc/moss-taps/data/Current/pa2/')]
 	#now enter grade
 
