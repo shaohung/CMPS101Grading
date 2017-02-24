@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include"Test.h"
 
+//http://stackoverflow.com/a/8048123/7451509
 pthread_mutex_t calculating = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t done = PTHREAD_COND_INITIALIZER;
 
