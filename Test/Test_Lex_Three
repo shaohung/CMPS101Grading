@@ -1,5 +1,0 @@
-https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Lex_Three.expected
-5
-Check lex
-timeout 2 ./../Lex in3 Test_Lex_Three.out
-valgrind --leak-check=full --log-file="memoryLeak" ./../Lex in3 Test_Lex_Threetmp.out
