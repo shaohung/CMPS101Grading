@@ -1,5 +1,5 @@
 https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/ListClient.c
-11 4
+13 2
 Check listclient
 gcc -std=c99 -Wall -c ListClient.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w 2>&1
