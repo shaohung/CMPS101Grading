@@ -5,7 +5,8 @@ class Test :
 		self.path = path
 		self.commands = [command.rstrip() for command in open(os.path.join(path, testname))]
 		self.url = self.commands[0]
-		self.points = int(self.commands[1])
+		self.a, self.b = map(lambda x: int(x), self.commands[1].split())
+	 	self.points = self.a + self.b
 		self.description = self.commands[2]
 		self.name = testname
 		self.report = ""
@@ -27,7 +28,7 @@ class Test :
 		try:
 			#raise ValueError('A very specific bad thing happened')
 			subprocess.check_call(("diff -w -b %s.out %s.expected") % (self.name, self.name), shell=True, cwd = self.path, stdout=FNULL)
-			self.score += self.points/2.0
+			self.score += self.a
 		except :
 			try:
 				#diff <( tr -d ' \n' <Test_Append.out ) <( tr -d ' \n' <Test_Append.expected)
@@ -37,7 +38,7 @@ class Test :
 				subprocess.check_output((("tr -d '\'' \\n'\'' <%s.expected > %s1.expected")%(self.name, self.name)), shell=True, cwd=self.path, executable='/bin/bash')
 				subprocess.check_call((("diff %s1.out %s1.expected")% (self.name, self.name)), shell=True, cwd = self.path, stdout=FNULL)
 				#self.report +=("Test failed due to comparison failure on spaces and newlines.") + "\n"
-				self.score += self.points/2.0
+				self.score += self.a
 			except:
 				self.report +=("Test failed due to comparison failure.") + "\n"
 				return
@@ -48,6 +49,6 @@ class Test :
 			for line in content:
 				if 'no leaks are possible' in line:
 					self.report += "ok\n"
-					self.score += self.points/2.0
+					self.score += self.b
 					return
 		self.report +=("Test failed due to memory leak.") + "\n"
