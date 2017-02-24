@@ -2,6 +2,7 @@ https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Constr
 4
 Check if list is constructed and destructed properly
 gcc -std=c99 -Wall -c Test_Constructor.c > w 2>&1
-gcc -std=c99 -Wall -o Test_Constructor Test_Constructor.o ../List.o -pthread -lrt &> r
+gcc -std=c99 -Wall -c main.c > w  2>&1
+gcc -std=c99 -Wall -o Test_Constructor main.o Test_Constructor.o ../List.o -pthread -lrt &> r
 ./Test_Constructor > Test_Constructor.out
 valgrind --leak-check=full --log-file="memoryLeak" ./Test_Constructor

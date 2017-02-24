@@ -2,6 +2,7 @@ https://github.com/ShobhitMaheshwari/CMPS101Grading/blob/master/Test/Test_Move.c
 7
 Check list move operations
 gcc -std=c99 -Wall -c Test_Move.c > w 2>&1
-gcc -std=c99 -Wall -o Test_Move Test_Move.o ../List.o -pthread -lrt &> r
+gcc -std=c99 -Wall -c main.c > w 2>&1
+gcc -std=c99 -Wall -o Test_Move main.o Test_Move.o ../List.o -pthread -lrt &> r
 ./Test_Move
 valgrind --leak-check=full --log-file="memoryLeak" ./Test_Move
