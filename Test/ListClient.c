@@ -9,12 +9,14 @@
 #include"../List.h"
 
 void main1(){
-	FILE* f;
+	FILE* f=stdout;
+	/*
 	f = fopen("ListClient.out", "w");
 	if( f==NULL ){
 		printf("Unable to write to file\n");
 		exit(EXIT_FAILURE);
 	}
+	*/
    List A = newList();
    List B = newList();
    List C = NULL;

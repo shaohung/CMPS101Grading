@@ -3,12 +3,12 @@
 #include<stdlib.h>
 #include "../List.h"
 void main1(){
-	FILE* out;
-	out = fopen("Test_Equals_Copy.out", "w");
+	FILE* out=stdout;
+	/*out = fopen("Test_Equals_Copy.out", "w");
 	if( out==NULL ){
 		printf("Unable to write to file\n");
 		exit(EXIT_FAILURE);
-	}
+	}*/
 	List a = newList(), b = newList(), c = newList();
 	for(int i = 0; i < 5; i++){
 		append(a, i*i);

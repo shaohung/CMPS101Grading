@@ -4,12 +4,12 @@
 #include "../List.h"
 #include "Test.h"
 void main1(){
-	FILE* out;
-	out = fopen("Test_Clear.out", "w");
+	FILE* out = stdout;
+/*	out = fopen("Test_Clear.out", "w");
 	if( out==NULL ){
 		printf("Unable to write to file\n");
 		exit(EXIT_FAILURE);
-	}
+	}*/
 	List a = newList();
 	append(a, 3);
 	printList(out, a);//3

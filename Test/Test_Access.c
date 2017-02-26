@@ -5,12 +5,12 @@
 
 #include "Test.h"
 void main1(){
-	FILE* out;
-	out = fopen("Test_Access.out", "w");
+	FILE* out=stdout;
+/*	out = fopen("Test_Access.out", "w");
 	if( out==NULL ){
 		printf("Unable to write to file\n");
 		exit(EXIT_FAILURE);
-	}
+	}*/
 	List a = newList();
 	append(a, 3);
 	printList(out, a); fprintf(out, "\n"); //3

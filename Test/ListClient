@@ -4,5 +4,5 @@ Check listclient
 gcc -std=c99 -Wall -c ListClient.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w 2>&1
 gcc -std=c99 -Wall -o ListClient main.o ListClient.o ../List.o -pthread -lrt &> r
-./ListClient
+./ListClient > ListClient.out
 valgrind --leak-check=full --log-file="memoryLeak" ./ListClient

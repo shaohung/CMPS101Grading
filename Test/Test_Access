@@ -4,5 +4,5 @@ Check list access functions
 gcc -std=c99 -Wall -c Test_Access.c > w 2>&1
 gcc -std=c99 -Wall -c main.c > w 2>&1
 gcc -std=c99 -Wall -o Test_Access main.o Test_Access.o ../List.o -pthread -lrt &> r
-./Test_Access
+./Test_Access > Test_Access.out
 valgrind --leak-check=full --log-file="memoryLeak" ./Test_Access
